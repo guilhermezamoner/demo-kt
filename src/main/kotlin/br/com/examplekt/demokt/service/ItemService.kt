@@ -18,7 +18,8 @@ class ItemService(
         itemRepository.deleteById(id)
     }
 
-    fun findById(id: Int): ItemEntity = itemRepository.findById(id).orElseThrow { IllegalArgumentException("Not found: $id") }
+    fun findById(id: Int): ItemEntity = itemRepository.findById(id)
+            .orElseThrow { IllegalArgumentException("Item Not Found") }
 
     fun update(id: Int, itemEntity: ItemEntity): ItemEntity{
         val existedItem = findById(id)

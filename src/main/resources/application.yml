@@ -8,3 +8,18 @@ spring:
     console.enabled: true
   jpa:
     spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: beans,env
+  endpoint:
+    health:
+      show-details: always
